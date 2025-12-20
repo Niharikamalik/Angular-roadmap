@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Learning Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .roadmap {
+            position: relative;
+        }
+
+        .phase {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .phase:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .phase::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -40px;
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .phase:last-child::before {
+            display: none;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .phase-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .phase-title {
+            font-size: 1.8em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .topic {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .topic:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left-color: white;
+            transform: translateX(5px);
+        }
+
+        .topic-name {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .beginner {
+            background: #4ade80;
+            color: white;
+        }
+
+        .intermediate {
+            background: #fbbf24;
+            color: white;
+        }
+
+        .advanced {
+            background: #f87171;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .phase-title {
+                font-size: 1.4em;
+            }
+
+            .topics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Angular Learning Roadmap</h1>
+        
+        <div class="roadmap">
+            <!-- Phase 1 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">Core Fundamentals</div>
+                </div>
+                <div class="topics">
+                    <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">TypeScript Basics</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/tools/cli" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Angular CLI</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/components" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Components</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/templates" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Templates & Data Binding</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/directives" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Directives (*ngIf, *ngFor)</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/pipes" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Pipes</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/components/lifecycle" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Component Lifecycle</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/components/inputs" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Component Communication</div>
+                        </div>
+                    </a>
+                </div>
+                <span class="difficulty beginner">Beginner Level</span>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">Services & Dependency Injection</div>
+                </div>
+                <div class="topics">
+                    <a href="https://angular.dev/guide/di" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Dependency Injection</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/di/creating-injectable-service" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Services</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/http" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">HttpClient</div>
+                        </div>
+                    </a>
+                    <a href="https://rxjs.dev/guide/observable" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Observables & RxJS</div>
+                        </div>
+                    </a>
+                    <a href="https://www.learnrxjs.io/learn-rxjs/operators" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">RxJS Operators</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/http/interceptors" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">HTTP Interceptors</div>
+                        </div>
+                    </a>
+                </div>
+                <span class="difficulty beginner">Beginner to Intermediate</span>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">Routing & Forms</div>
+                </div>
+                <div class="topics">
+                    <a href="https://angular.dev/guide/routing" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Angular Router</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/routing/common-router-tasks#preventing-unauthorized-access" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Route Guards</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/ngmodules/lazy-loading" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Lazy Loading</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/forms/template-driven-forms" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Template-Driven Forms</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/forms/reactive-forms" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Reactive Forms</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/forms/form-validation" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Form Validation</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/forms/form-validation#defining-custom-validators" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Custom Validators</div>
+                        </div>
+                    </a>
+                </div>
+                <span class="difficulty intermediate">Intermediate Level</span>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">Advanced Concepts</div>
+                </div>
+                <div class="topics">
+                    <a href="https://ngrx.io/guide/store" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">State Management (NgRx)</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/best-practices/runtime-performance" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Change Detection</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/ngmodules" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Angular Modules</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/components/content-projection" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Content Projection</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/components/dynamic" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Dynamic Components</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/animations" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Angular Animations</div>
+                        </div>
+                    </a>
+                    <a href="https://material.angular.io/cdk/categories" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Angular CDK</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/directives/structural-directives" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Custom Directives</div>
+                        </div>
+                    </a>
+                </div>
+                <span class="difficulty advanced">Advanced Level</span>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">5</div>
+                    <div class="phase-title">Modern Angular & Testing</div>
+                </div>
+                <div class="topics">
+                    <a href="https://angular.dev/guide/components" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Standalone Components</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/signals" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Signals (Angular 16+)</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/templates/control-flow" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">New Control Flow (@if, @for)</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/testing" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Unit Testing (Jasmine/Karma)</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/guide/testing/e2e" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">E2E Testing</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/best-practices/runtime-performance" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Performance Optimization</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/ecosystem/service-workers" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">Angular Universal (SSR)</div>
+                        </div>
+                    </a>
+                    <a href="https://angular.dev/ecosystem/service-workers" target="_blank">
+                        <div class="topic">
+                            <div class="topic-name">PWA with Service Workers</div>
+                        </div>
+                    </a>
+                </div>
+                <span class="difficulty advanced">Advanced to Expert</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
